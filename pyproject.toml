@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "fierce"
+version = "1.5.0"
+description = "A DNS reconnaissance tool for locating non-contiguous IP space."
+authors = ["Your Name <you@example.com>"]
+license = "GPLv3"
+readme = "README.md"
+homepage = "https://github.com/mschwager/fierce"
+repository = "https://github.com/mschwager/fierce"
+packages = [
+    { include = "fierce", from="." }
+]
+include = [ "lists/*.txt" ]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Security",
+]
+
+[tool.poetry.urls]
+"Issue Tracker" = "https://github.com/mschwager/fierce/issues"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+dnspython = "1.16.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+flake8 = "^3.7.7"
+pytest-cov = "^3.0.0"
+coveralls = "^1.7.0"
+pyfakefs = "^3.5.8"
+pytest-github-report = "^0.0.1"
+
+[tool.poetry.scripts]
+fierce = "fierce.fierce:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
